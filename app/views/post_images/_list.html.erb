@@ -1,4 +1,5 @@
 
+<!--User@show(詳細画面)・PostImage@index(投稿一覧画面)-->
 
 <% post_images.each do |post_image| %>
 <div>
@@ -13,3 +14,5 @@
 </div>
 
 <% end %>
+
+<%= paginate post_images %>

@@ -8,3 +8,4 @@ class PostComment < ApplicationRecord
 
 
 end
+
