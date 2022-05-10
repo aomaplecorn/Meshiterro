@@ -1,6 +1,18 @@
 <h1>User#edit</h1>
 
 <h2>プロフィール編集</h2>
+
+<% if @user.errors.any? %>
+  <ul>
+    <% @user.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+  
+<!--カリキュラムにはないが、自分のイメージ画像を表示-->
+<%= image_tag @user.get_profile_image(100,100) %>
+
 <%= form_with model: @user do |f| %>
   <label for="inputName">Name</label>
   <%= f.text_field :name, autofocus: true, id:"inputName",placeholder: "名前" %>
